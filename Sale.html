@@ -1,0 +1,232 @@
+﻿
+<div class="body-content" style="padding-left:2%; padding-right:2%;" ng-controller="partsSaleController">
+    <h3>Sale</h3>
+    <style type="text/css">
+        .Desc {
+            width: 100% !important;
+        }
+
+        .Amt {
+            width: 100% !important;
+            text-align: right !important;
+        }
+
+        .full button span {
+            background-color: limegreen;
+            border-radius: 32px;
+            color: black;
+        }
+
+        .partially button span {
+            background-color: orange;
+            border-radius: 32px;
+            color: black;
+        }
+    </style>
+
+    <div class="btn-toolbar" style="margin-bottom: 20px;">
+        <div class="btn-group" style="margin-bottom: 10px;">
+            <button id="btnRefresh" CssClass="btn btn-primary" ng-click="Refresh()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+            <button id="btnSave" CssClass="btn btn-primary" ng-click="Save()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+            <button id="btnList" CssClass="btn btn-primary" ng-click="Print()"><span class="glyphicon glyphicon-print"></span> Print</button>
+            <button id="btnList" CssClass="btn btn-primary" ng-click="StockReindex()"><span class="glyphicon glyphicon-retweet"></span> Stock Re-Index</button>
+        </div>
+        <div class="col-sm-3" style="float:right">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12 ui-widget">
+                    <input type="text" id="txtSearch" class="search-query form-control" placeholder="Search" ng-keyup="complete()" />
+                    <span class="input-group-btn">
+                        <button class="btn" id="btnSearch" style="background-color:#4f91bf" type="button" ng-click="GetBill()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <label fro="txtSearch" class="form-group"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div id="dvBranch" class="panel panel-primary">
+            <div class="panel-heading"><b> Sale Bill Information</b></div>
+            <div class="panel-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1danger">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <label>Bill No :</label>
+                                <input type="text" id="txtInwardNo" class="form-control input-sm" ng-model="SaleHdr.OutwardNo" ng-disabled="true" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Bill Date :</label>
+                                <input type="text" id="txtBillDate" class="form-control input-sm" ng-model="SaleHdr.OutwardDate" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label>P. O. :</label>
+                                <select id="ddlPO" class="form-control input-sm">
+                                    <option value=""> --Select-- </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Type :</label>
+                                <select id="ddlType" class="form-control input-sm" ng-model="SaleHdr.BillTypeID" ng-init="SaleHdr.BillTypeID='0'">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="t in BillTypes" ng-value="t.TypeID" ng-selected="SaleHdr.BillTypeID==t.TypeID">
+                                        {{t.Description+" ("+t.Code+")"}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>GST No :</label>
+                                <input type="text" id="txtGSTNO" class="form-control input-sm" ng-model="SaleHdr.PartyGSTIN" ng-disabled="true" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label>State :</label>
+                                <input type="text" id="txtState" class="form-control input-sm" ng-model="SaleHdr.StateName" ng-disabled="true" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Party :</label>
+                                <select id="ddlParty" class="form-control input-sm " ng-options="p.SubLedgerName for p in Parties " ng-model="prt" ng-change="GetSubledgerDetails()">
+                                    <option value="">--Select--</option>
+                                </select>
+                                <input type="hidden" ng-model="SaleHdr.SubledgerID" ng-init="SaleHdr.SubledgerID='0'" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Address :</label>
+                                <input type="text" id="txtPartyAddress" class="form-control input-sm" ng-model="SaleHdr.PartyAddress" ng-disabled="true" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <td text align="right"><label>TCS Applicable ?</label></td>
+                                <td>
+                                    <select id="istcs" class="form-control input-sm" ng-init="SaleHdr.isTCS=''" ng-model="SaleHdr.isTCS">
+                                        <option value="">--Select--</option>
+                                        <option value="1">0.075</option>
+                                        <option value="2">0.750</option>
+                                    </select>
+                                </td>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>TCS Amount :</label>
+                                <input type="text" id="txtTCSAmount" ng-disabled="true" class="form-control input-sm" ng-model="SaleHdr.TotalTCSAmount" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Round-off :</label>
+                                <input type="text" id="txtOtherCharges" class="form-control input-sm" ng-model="SaleHdr.RoundOff" ng-disabled="true" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Net.Bill Amt:</label>
+                                <input type="text" id="txtBillAmt" class="form-control input-sm" ng-model="SaleHdr.TotalNetAmt" ng-disabled="true" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row form-group">
+
+        <label ng-show="show" style="align-self:center;"><font color="red" style="font-size:large; font-weight:200;">Stock Qty : </font><font color="red" style="font-size:large; font-weight:200;">{{item.StockQty | number:2}}</font></label>
+        <label ng-show="msg!=null" style="align-self:center;"><font color="red" style="font-size:large; font-weight:200;"></font><font color="red" style="font-size:large; font-weight:200;">{{msg}}</font></label>
+        <table id="tblBranches" class="tbl table-responsive" border="1" cellpadding="3" style="width:100%;text-align: center !important; border-collapse: collapse; font-size: 12px">
+            <thead>
+                <tr style="color: White; background-color: #428BCA;">
+                    <th style="width:1%;">Srl#</th>
+                    <th style="width:15%;">Part No</th>
+                    <th style="width:15%;">Part Description</th>
+                    <th style="width:4%;">Rack</th>
+                    <th style="width:5%;">MRP</th>
+                    <th style="width:3%;">Qty</th>
+                    <th style="width:5%;">Rate</th>
+                    <th style="width:6%;">Value</th>
+                    <th style="width:4%;">Dis(%)</th>
+                    <th style="width:5%;">DisAmt</th>
+                    <th style="width:6%;">Taxable</th>
+                    <th style="width:3%;">GST%</th>
+                    <th style="width:5%;">CGST</th>
+                    <th style="width:5%;">SGST</th>
+                    <th style="width:5%;">IGST</th>
+                    <th style="width:8%;">Net</th>
+                    <th style="width:12%;"></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>
+                        <input type="text" id="txtsCode" class="Desc" ng-model="item.ItemCode" ng-change="GetItems()" ng-blur="CalculateItemNet()" />
+                    </th>
+                    <th><input type="text" class="Desc" ng-model="item.ItemName" disabled /></th>
+                    <th><input type="text" id="txtRack" class="Desc" ng-model="item.RackNo" ng-disabled="true" /></th>
+                    <th>
+                        <!--<select id="ddlMRP" class="Desc" ng-disabled="mrpDisabled" ng-options="i.MRP for i in Items track by i.MRP" ng-model="m" ng-change="GetItem()"></select>-->
+                        <input class="Desc" ng-model="item.MRP" ng-disabled="disabled" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' ng-blur="CalculateItemNet()" ng-change="CalculateItemNet()" sb-number />
+                    </th>
+                    <!--<th> <input type="text" id="txtMrp" class="Desc" ng-model="inw.MRP" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' ng-change="calculateMRP()" sb-number /></th>-->
+                    <th>
+                        <input type="text" id="txtQty" class="Desc" ng-model="item.Qty" ng-disabled="disabled" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' ng-change="CalculateItemNet()" ng-blur="CalculateItemNet()" sb-number />
+                    </th>
+                    <th>
+                        <input type="text" class="Desc" ng-model="item.Rate" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' ng-change="CalculateItemNet()" ng-blur="CalculateItemNet()" sb-number />
+                    </th>
+                    <th>
+                        <input type="text" class="Desc" ng-model="item.Gross" disabled />
+                    </th>
+                    <th><input type="text" id="txtDiscPer" class="Desc" ng-model="item.DiscPercent" ng-disabled="disabled" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' ng-change="CalculateItemNet()" ng-blur="CalculateItemNet()" sb-number /></th>
+                    <th>
+                        <input type="text" class="Desc" ng-model="item.DiscAmt" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' sb-number />
+                    </th>
+                    <th><input type="text" class="Desc" ng-model="item.Taxable" disabled /></th>
+                    <th><input type="text" id="txtGstPer" class="Desc" ng-model="item.GSTPercent" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' sb-number /></th>
+                    <th>
+                        <input type="text" class="Desc" ng-model="item.CGSTAmt" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' sb-number />
+                    </th>
+                    <th><input type="text" class="Desc" ng-model="item.SGSTmt" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' sb-number /></th>
+                    <th><input type="text" class="Desc" ng-model="item.IGSTAmt" ng-disabled="true" sb-precision='{{config.sbPrecision}}' sb-max-precision='{{config.sbMaxPrecision}}' sb-number /></th>
+                    <th><input type="text" class="Desc" ng-model="item.NetAmt" disabled /></th>
+                    <th><label></label><input type="image" id="btnAdd" title="Select" src="../images/AddNewitem.jpg" style="height: 20px; width: 20px;" ng-disabled="item.NetAmt<=0" ng-click="AddtoCart()"> </th>
+                </tr>
+            </thead>
+            <tbody ng-if="SaleDtls.length>0">
+                <tr ng-repeat="sd in SaleDtls">
+                    <td>{{$index+1}}</td>
+                    <td>{{sd.ItemCode}}</td>
+                    <td>{{sd.ItemName}}</td>
+                    <td>{{sd.RackNo}}</td>
+                    <td align="right">{{sd.MRP | number:2}}</td>
+                    <td align="right">{{sd.Qty | number:2}}</td>
+                    <td align="right">{{sd.Rate | number:2}}</td>
+                    <td align="right">{{sd.Gross | number:2}}</td>
+                    <td align="right">{{sd.DiscPercent | number:2}}</td>
+                    <td align="right">{{sd.DiscAmt | number:2}}</td>
+                    <td align="right">{{sd.Taxable | number:2}}</td>
+                    <td align="right">{{sd.GSTPercent | number:2}}</td>
+                    <td align="right">{{sd.CGSTAmt | number:2}}</td>
+                    <td align="right">{{sd.SGSTmt | number:2}}</td>
+                    <td align="right">{{sd.IGSTAmt | number:2}}</td>
+                    <td align="right">{{sd.NetAmt | number:2}}</td>
+                    <td>
+                        <input type="image" id="btnSelect" title="Select" src="../images/Edit.jpg" style="height: 20px; width: 20px;" ng-click="EditeCart(sd)">
+                        <input type="image" id="btnDelete" title="Select" src="../images/delete.jpg" style="height: 20px; width: 20px;" ng-click="DeleteCart(sd)">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr style="background-color:gainsboro">
+                    <td colspan="6" align="right">{{TotalQty | number:2}}</td>
+                    <td colspan="2" align="right">{{TotalGross | number:2}}</td>
+                    <td colspan="2" align="right">{{TotalDiscAmt | number:2}}</td>
+                    <td align="right">{{TotalTaxable | number:2}}</td>
+                    <td align="right"></td>
+                    <td align="right">{{TotalCGST | number:2}}</td>
+                    <td align="right">{{TotalSGST | number:2}}</td>
+                    <td align="right">{{TotalIGST | number:2}}</td>
+                    <td align="right">{{SumNet | number:2}}</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

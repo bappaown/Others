@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Spare parts Management System</title>
+
+    <base href="/" />
+
+    <!--Start Region CSS library -->
+    <link href="../css/site.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/style_custom.css" rel="stylesheet" />
+    <link href="../css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../css/zebra_dialog.css" rel="stylesheet" />
+    <link href="../css/loading-bar.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+        #loading-bar .bar {
+            background: #000;
+            height: 4px;
+        }
+
+        /*#loading-bar-spinner .spinner-icon {
+        width: 18px;
+        height: 18px;
+        border: solid 4px transparent;
+        border-top-color: #cadd22;
+        border-left-color: #cadd22;
+        border-radius: 10px;
+        }*/
+    </style>
+
+    <!--<link href="../css/validation-style.css" rel="stylesheet" />-->
+    <!--End Region CSS library -->
+
+</head>
+<body ng-app="spareparts">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" style="color:#fff;" href="~/">Employee Management System</a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling --><!--id="menulist"-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href='home'><span class="glyphicon glyphicon-home" style="font-size: 23px; line-height: 5px;"></span></a></li>
+                        <li ng-repeat="menu in SiteMenus track by $index">
+                            <a href="{{menu.URL}}" class="dropdown-toggle" data-toggle="dropdown">{{menu.Description}} <b ng-if="(menu.SubMenus).length>0" class="caret"></b></a>
+                            <ul ng-if="(menu.SubMenus).length>0" class="dropdown-menu">
+                                <li ng-repeat="item in menu.SubMenus track by $index"><a href="{{item.SubURL}}">{{item.SubDescription}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
+                    <li>
+                        <a href="#"><span Font-Size="13px" style="padding-right:20px">SPARE PARTS MANAGEMENT SYSTEM</span>|</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user" style="font-size:20px;line-height:5px;"></span> &nbsp;<span style="margin-left:2px;padding-right:20px">{{userName}}</span>|</a>
+                    </li>
+
+                    <!--Trigger the modal with a button-->
+                    <li>
+                        <a id="lnkLogin" href="login" ng-if="IsAuthenticated==false">Login</a>
+                        <a id="lnkLogout" href="#" ng-click="signout()" ng-if="IsAuthenticated==true">Logout</a>
+                    </li>
+                    <li><a href="#">&nbsp</a></li>
+                </ul>
+                <!--End of Social icons-->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid" style="margin-bottom:40px;">
+        <form name="frm" autocomplete="off">
+            <!--<div id="loading-bar-container"></div>-->
+            <!-- angular templating. This is where content will be injected -->
+            <div ng-view></div>
+        </form>
+    </div>
+
+    <footer class="footer navbar-default navbar-fixed-bottom">
+        <div class="container text-center">
+            <small class="copyright"><a class="white" href="/">&copy; DGS Infotech, Kolkata</a></small>
+        </div>
+    </footer>
+
+
+    <!--Start Region Script library -->
+    <script src="../scripts/jquery-1.10.2.min.js"></script>
+    <script src="../scripts/jquery-ui.min.js"></script>
+    <script src="../scripts/angular.js"></script>
+    <script src="../scripts/angular-route.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/modernizr-2.6.2.js"></script>
+    <script src="../scripts/zebra_dialog.js"></script>
+    <script src="../scripts/loading-bar.min.js"></script>
+    <script src="scripts/angular-linq.min.js"></script>
+
+
+    <script src="controller/main-app.js"></script>
+    <script src="controller/menuController.js"></script>
+    <script src="controller/homeController.js"></script>
+    <script src="controller/loginController.js"></script>
+    <script src="controller/companyController.js"></script>
+    <script src="controller/branchController.js"></script>
+    <script src="controller/userController.js"></script>
+    <script src="controller/partyController.js"></script>
+    <script src="controller/branchPartyController.js"></script>
+    <script src="controller/itemController.js"></script>
+    <script src="controller/purchaseController.js"></script>
+    <script src="controller/partsSaleController.js"></script>
+    <script src="controller/PrintReportController.js"></script>
+    <script src="controller/RPVoucherController.js"></script>
+    <script src="controller/paymentVoucherController.js"></script>
+    <script src="controller/SaleReturnController.js"></script>
+    <script src="controller/PurchaseReturController.js"></script>
+    <script src="controller/gstrReportController.js"></script>
+    <script src="controller/transferController.js"></script>
+    <script src="controller/ReportController.js"></script>
+    <script src="controller/RackController.js"></script>
+    <!--End Region Script library -->
+
+</body>
+</html>
