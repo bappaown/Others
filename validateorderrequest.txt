@@ -1,0 +1,238 @@
+{
+  "id": "",
+  "catalog": "KFCAustraliaMenu_1_delivery_10000",
+  "lang": "en-US",
+  "source": "doordash",
+  "store": {
+    "storeId": "1",
+    "name": "KFC Frenchs Forest",
+    "posId": "1",
+    "posType": "aloha",
+    "timeZone": "Australia/Sydney",
+    "phoneNumber": "",
+    "location": {
+      "latitude": "33.31",
+      "longitude": "-32.31"
+    }
+  },
+  "customer": {
+    "id": "",
+    "firstName": "Samrat",
+    "lastName": "Sarkar",
+    "email": "samrat.sarkar4@cognizant.com",
+    "phoneNumber": "9900990099",
+    "couponCodes": [
+        ]
+  },
+  "service": "delivery",
+  "foodLines":[{
+    "id": "CAT1-20034-30691_30691-0",
+    "quantity": 1,
+    "salesCategoryId": "CAT1-20034-30691_30691-0",
+    "posId": "31900 - 0",
+    "mdmId": "CAT1-20034-30691_30691-0",
+    "name": "Zinger Crunch Burger™ Combo",
+    "displayName": "Zinger Crunch Burger™ Combo",
+    "unitPrice": 1085,
+    "modGrps": [
+      {
+        "id": "30691-1",
+        "modifiers": [
+          {
+            "id": "30691-1_30691-100250",
+            "quantity": 1,
+            "salesCategoryId": "30691-1_30691-100250",
+            "posId": "100250",
+            "mdmId": "30691-1_30691-100250",
+            "name": "Zinger Burger",
+            "displayName": "Zinger Burger",
+            "unitPrice": 0,
+            "modGrps": [
+			  {
+				"id": "90115",
+				"modifiers": [
+				  {
+					"id": "90115_30691-200008",
+					"quantity": 1,
+					"salesCategoryId": "90115_30691-200008",
+					"posId": "200008",
+					"mdmId": "90115_30691-200008",
+					"name": "Lettuce",
+					"displayName": "Lettuce",
+					"unitPrice": 0,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  },
+				  {
+					"id": "90115_30691-200001",
+					"quantity": 1,
+					"salesCategoryId": "90115_30691-200001",
+					"posId": "200001",
+					"mdmId": "90115_30691-200001",
+					"name": "Mayo",
+					"displayName": "Mayo",
+					"unitPrice": 0,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  }
+				]
+			  },
+			  {
+				"id": "90122",
+				"modifiers": [
+				  {
+					"id": "90122_30691-200013",
+					"quantity": 1,
+					"salesCategoryId": "90122_30691-200013",
+					"posId": "200013",
+					"mdmId": "90122_30691-200013",
+					"name": "Bacon Slice",
+					"displayName": "Bacon Slice",
+					"unitPrice": 100,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  },
+				  {
+					"id": "90122_30691-200005",
+					"quantity": 1,
+					"salesCategoryId": "90122_30691-200005",
+					"posId": "200005",
+					"mdmId": "90122_30691-200005",
+					"name": "BBQ Sauce",
+					"displayName": "BBQ Sauce",
+					"unitPrice": 0,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  }
+				]
+			  }
+			],
+            "isDefault": true
+          }
+        ]
+      },
+	  {
+		"id": "30691-2",
+        "modifiers": [{
+			"id": "30691-2_30691-2-1",
+			"quantity": 1,
+			"salesCategoryId": "30691-2_30691-2-1",
+			"posId": "2-1",
+			"mdmId": "30691-2_30691-2-1",
+			"name": "Chips - Edit to Upsize",
+			"displayName": "Chips - Edit to Upsize",
+			"unitPrice": 0,
+			"modGrps": [{
+					"id": "CUSTOMGROUPKFCAU-1",
+					"modifiers": [{
+						"id": "CUSTOMGROUPKFCAU-1_30691-136005",
+						"quantity": 1,
+						"salesCategoryId": "CUSTOMGROUPKFCAU-1_30691-136005",
+						"posId": "136005",
+						"mdmId": "CUSTOMGROUPKFCAU-1_30691-136005",
+						"name": "Regular Chips",
+						"displayName": "Regular Chips",
+						"unitPrice": 0,
+						"modGrps": [{
+							"id": "89711",
+							"modifiers": [{
+								"id": "89711_30691-200031",
+								"quantity": 1,
+								"salesCategoryId": "89711_30691-200031",
+								"posId": "200031",
+								"mdmId": "89711_31900-200031",
+								"name": "Extra Salt",
+								"displayName": "Extra Salt",
+								"unitPrice": 0,
+								"modGrps": [
+									null
+								],
+						"isDefault": true
+				}]
+									}],
+						"isDefault": true
+				}]
+			}],
+			"isDefault": true
+		}
+		]
+	  },
+	  {
+		"id": "30691-3",
+        "modifiers": [{
+			"id": "30691-3_30691-3-1",
+			"quantity": 1,
+			"salesCategoryId": "30691-3_30691-3-1",
+			"posId": "3-1",
+			"mdmId": "30691-3_30691-3-1",
+			"name": "Pepsi Max - Edit to Upsize",
+			"displayName": "Pepsi Max - Edit to Upsize",
+			"unitPrice": 0,
+			"modGrps": [{
+				"id": "CUSTOMGROUPKFCAU-1",
+				"modifiers": [{
+					"id": "CUSTOMGROUPKFCAU-1_30691-141110",
+					"quantity": 1,
+					"salesCategoryId": "CUSTOMGROUPKFCAU-1_30691-141110",
+					"posId": "141110",
+					"mdmId": "CUSTOMGROUPKFCAU-1_30691-141110",
+					"name": "Large Pepsi Max",
+					"displayName": "Large Pepsi Max",
+					"unitPrice": 90,
+					"modGrps": [
+						null
+					],
+				"isDefault": true
+					}]
+				}],
+		"isDefault": true
+		}]
+	  }],
+	"customProperties": {
+	  "mealdealid": "1010",
+	  "mealdealdetailid": "QUICK_COMBO"
+	}
+}],
+  "taxLines": [
+  ],
+  "additionalChargeLines": [
+  ],
+  "discountLines": [
+   {
+   "CouponCode" : "FREE50",
+   "PromotionId" : "6973"
+   }
+  ],
+  "requestedDateTime": {
+    "isForNow": true,
+    "futureDateTime": 0
+  },
+  "channel": "doordash",
+  "subTotal": 0,
+  "taxTotal": 0,
+  "additionalChargeTotal": 0,
+  "discountTotal": 200,
+  "total": 905,
+  "deliveryAddress": {
+    "name": "Samrat",
+    "city": "Frenchs Forest",
+    "country": "AU",
+    "pinCode": "1049",
+    "state": "Sydnet",
+    "location": {
+      "latitude": "33.31",
+      "longitude": "-32.31"
+    },
+    "addressLines": [
+      "CnR Avenue"
+    ]
+  }
+}
