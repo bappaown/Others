@@ -219,8 +219,8 @@
   "subTotal": 0,
   "taxTotal": 0,
   "additionalChargeTotal": 0,
-  "discountTotal": 200,
-  "total": 905,
+  "discountTotal": 0,
+  "total": 1085,
   "deliveryAddress": {
     "name": "Samrat",
     "city": "Frenchs Forest",
