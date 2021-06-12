@@ -32,302 +32,182 @@
         ]
   },
   "service": "delivery",
-  "foodLines": [
-            {
-                "validationResult": {
-                    "validationStatus": {
-                        "status": true,
-                        "message": null,
-                        "errorCode": null
-                    },
-                    "excludedItems": []
-                },
-                "quantity": 1,
-                "unitPrice": 1105,
-                "item": {
-                    "id": "CAT1-20034-30691_30691-0",
-                    "salesCategoryId": "food",
-                    "categoryId": "",
-                    "quantity": 1,
-                    "modGrps": [
-                        {
-                            "id": "30691-1",
-                            "modifiers": [
-                                {
-                                    "isDefault": false,
-                                    "id": "30691-1_30691-100250",
-                                    "salesCategoryId": "food",
-                                    "categoryId": "",
-                                    "quantity": 1,
-                                    "modGrps": [
-                                        {
-                                            "id": "90115",
-                                            "modifiers": [
-                                                {
-                                                    "isDefault": true,
-                                                    "id": "90115_30691-200008",
-                                                    "salesCategoryId": "food",
-                                                    "categoryId": "",
-                                                    "quantity": 1,
-                                                    "modGrps": [],
-                                                    "unitPrice": 20,
-                                                    "posId": "200008",
-                                                    "mdmId": "",
-                                                    "name": "Lettuce",
-                                                    "displayName": "Lettuce",
-                                                    "customProperties": [
-                                                        {
-                                                            "key": "mrprate",
-                                                            "value": "0"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "isDefault": true,
-                                                    "id": "90115_30691-200001",
-                                                    "salesCategoryId": "food",
-                                                    "categoryId": "",
-                                                    "quantity": 1,
-                                                    "modGrps": [],
-                                                    "unitPrice": 0,
-                                                    "posId": "200001",
-                                                    "mdmId": "",
-                                                    "name": "Mayo",
-                                                    "displayName": "Mayo",
-                                                    "customProperties": [
-                                                        {
-                                                            "key": "mrprate",
-                                                            "value": "0"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "customProperties": []
-                                        },
-                                        {
-                                            "id": "90122",
-                                            "modifiers": [
-                                                {
-                                                    "isDefault": true,
-                                                    "id": "90122_30691-200013",
-                                                    "salesCategoryId": "food",
-                                                    "categoryId": "",
-                                                    "quantity": 1,
-                                                    "modGrps": [],
-                                                    "unitPrice": 100,
-                                                    "posId": "200013",
-                                                    "mdmId": "",
-                                                    "name": "Bacon Slice",
-                                                    "displayName": "Bacon Slice",
-                                                    "customProperties": [
-                                                        {
-                                                            "key": "mrprate",
-                                                            "value": "0"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "isDefault": true,
-                                                    "id": "90122_30691-200005",
-                                                    "salesCategoryId": "food",
-                                                    "categoryId": "",
-                                                    "quantity": 1,
-                                                    "modGrps": [],
-                                                    "unitPrice": 0,
-                                                    "posId": "200005",
-                                                    "mdmId": "",
-                                                    "name": "BBQ Sauce",
-                                                    "displayName": "BBQ Sauce",
-                                                    "customProperties": [
-                                                        {
-                                                            "key": "mrprate",
-                                                            "value": "0"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "customProperties": []
-                                        }
-                                    ],
-                                    "unitPrice": 0,
-                                    "posId": "100250",
-                                    "mdmId": "",
-                                    "name": "Zinger Burger",
-                                    "displayName": "Zinger Burger",
-                                    "customProperties": [
-                                        {
-                                            "key": "mrprate",
-                                            "value": "0"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "customProperties": []
-                        },
-                        {
-                            "id": "30691-2",
-                            "modifiers": [
-                                {
-                                    "isDefault": false,
-                                    "id": "30691-2_30691-2-1",
-                                    "salesCategoryId": "food",
-                                    "categoryId": "",
-                                    "quantity": 1,
-                                    "modGrps": [
-                                        {
-                                            "id": "CUSTOMGROUPKFCAU-1",
-                                            "modifiers": [
-                                                {
-                                                    "isDefault": false,
-                                                    "id": "CUSTOMGROUPKFCAU-1_30691-136005",
-                                                    "salesCategoryId": "food",
-                                                    "categoryId": "",
-                                                    "quantity": 1,
-                                                    "modGrps": [
-                                                        {
-                                                            "id": "89711",
-                                                            "modifiers": [
-                                                                {
-                                                                    "isDefault": true,
-                                                                    "id": "89711_30691-200031",
-                                                                    "salesCategoryId": "food",
-                                                                    "categoryId": "",
-                                                                    "quantity": 1,
-                                                                    "modGrps": [],
-                                                                    "unitPrice": 0,
-                                                                    "posId": "200031",
-                                                                    "mdmId": "",
-                                                                    "name": "Extra Salt",
-                                                                    "displayName": "Extra Salt",
-                                                                    "customProperties": [
-                                                                        {
-                                                                            "key": "mrprate",
-                                                                            "value": "0"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "customProperties": []
-                                                        }
-                                                    ],
-                                                    "unitPrice": 0,
-                                                    "posId": "136005",
-                                                    "mdmId": "",
-                                                    "name": "Regular Chips",
-                                                    "displayName": "Regular Chips",
-                                                    "customProperties": [
-                                                        {
-                                                            "key": "mrprate",
-                                                            "value": "0"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "customProperties": []
-                                        }
-                                    ],
-                                    "unitPrice": 0,
-                                    "posId": "2-1",
-                                    "mdmId": "",
-                                    "name": "Chips - Edit to Upsize",
-                                    "displayName": "Chips - Edit to Upsize",
-                                    "customProperties": [
-                                        {
-                                            "key": "mrprate",
-                                            "value": "0"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "customProperties": []
-                        },
-                        {
-                            "id": "30691-3",
-                            "modifiers": [
-                                {
-                                    "isDefault": false,
-                                    "id": "30691-3_30691-3-1",
-                                    "salesCategoryId": "food",
-                                    "categoryId": "",
-                                    "quantity": 1,
-                                    "modGrps": [
-                                        {
-                                            "id": "CUSTOMGROUPKFCAU-1",
-                                            "modifiers": [
-                                                {
-                                                    "isDefault": false,
-                                                    "id": "CUSTOMGROUPKFCAU-1_30691-141110",
-                                                    "salesCategoryId": "food",
-                                                    "categoryId": "",
-                                                    "quantity": 1,
-                                                    "modGrps": [],
-                                                    "unitPrice": 90,
-                                                    "posId": "141110",
-                                                    "mdmId": "",
-                                                    "name": "Large Pepsi Max",
-                                                    "displayName": "Large Pepsi Max",
-                                                    "customProperties": [
-                                                        {
-                                                            "key": "mrprate",
-                                                            "value": "0"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "customProperties": []
-                                        }
-                                    ],
-                                    "unitPrice": 0,
-                                    "posId": "3-1",
-                                    "mdmId": "",
-                                    "name": "Pepsi Max - Edit to Upsize",
-                                    "displayName": "Pepsi Max - Edit to Upsize",
-                                    "customProperties": [
-                                        {
-                                            "key": "mrprate",
-                                            "value": "0"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "customProperties": []
-                        }
-                    ],
-                    "unitPrice": 895,
-                    "posId": "30691 - 0",
-                    "mdmId": "CAT1-20034-30691_30691-0",
-                    "name": "Zinger Burger Combo",
-                    "displayName": "Zinger Burger Combo",
-                    "customProperties": [
-                        {
-                            "key": "veg",
-                            "value": "False"
-                        },
-                        {
-                            "key": "mealdealid",
-                            "value": "1002"
-                        },
-                        {
-                            "key": "mealdealdetailid",
-                            "value": "QUICK_COMBO"
-                        },
-                        {
-                            "key": "mrprate",
-                            "value": "0"
-                        },
-                        {
-                            "key": "pricewithouttax",
-                            "value": "895"
-                        }
-                    ]
-                },
-                "taxComponents": [],
-                "additionalChargeComponents": [],
-                "isAvailable": false,
-                "id": "dcc5d93c-1a94-4047-9fbc-7ac400275d7d",
-                "amount": 1105
-            }
-        ],
+  "foodLines":[{
+    "id": "CAT1-20034-30691_30691-0",
+    "quantity": 1,
+    "salesCategoryId": "CAT1-20034-30691_30691-0",
+    "posId": "31900 - 0",
+    "mdmId": "CAT1-20034-30691_30691-0",
+    "name": "Zinger Crunch Burger™ Combo",
+    "displayName": "Zinger Crunch Burger™ Combo",
+    "unitPrice": 895,
+    "modGrps": [
+      {
+        "id": "30691-1",
+        "modifiers": [
+          {
+            "id": "30691-1_30691-100250",
+            "quantity": 1,
+            "salesCategoryId": "30691-1_30691-100250",
+            "posId": "100250",
+            "mdmId": "30691-1_30691-100250",
+            "name": "Zinger Burger",
+            "displayName": "Zinger Burger",
+            "unitPrice": 0,
+            "modGrps": [
+			  {
+				"id": "90115",
+				"modifiers": [
+				  {
+					"id": "90115_30691-200008",
+					"quantity": 1,
+					"salesCategoryId": "90115_30691-200008",
+					"posId": "200008",
+					"mdmId": "90115_30691-200008",
+					"name": "Lettuce",
+					"displayName": "Lettuce",
+					"unitPrice": 20,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  },
+				  {
+					"id": "90115_30691-200001",
+					"quantity": 1,
+					"salesCategoryId": "90115_30691-200001",
+					"posId": "200001",
+					"mdmId": "90115_30691-200001",
+					"name": "Mayo",
+					"displayName": "Mayo",
+					"unitPrice": 0,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  }
+				]
+			  },
+			  {
+				"id": "90122",
+				"modifiers": [
+				  {
+					"id": "90122_30691-200013",
+					"quantity": 1,
+					"salesCategoryId": "90122_30691-200013",
+					"posId": "200013",
+					"mdmId": "90122_30691-200013",
+					"name": "Bacon Slice",
+					"displayName": "Bacon Slice",
+					"unitPrice": 100,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  },
+				  {
+					"id": "90122_30691-200005",
+					"quantity": 1,
+					"salesCategoryId": "90122_30691-200005",
+					"posId": "200005",
+					"mdmId": "90122_30691-200005",
+					"name": "BBQ Sauce",
+					"displayName": "BBQ Sauce",
+					"unitPrice": 0,
+					"modGrps": [
+					  null
+					],
+					"isDefault": true
+				  }
+				]
+			  }
+			],
+            "isDefault": true
+          }
+        ]
+      },
+	  {
+		"id": "30691-2",
+        "modifiers": [{
+			"id": "30691-2_30691-2-1",
+			"quantity": 1,
+			"salesCategoryId": "30691-2_30691-2-1",
+			"posId": "2-1",
+			"mdmId": "30691-2_30691-2-1",
+			"name": "Chips - Edit to Upsize",
+			"displayName": "Chips - Edit to Upsize",
+			"unitPrice": 0,
+			"modGrps": [{
+					"id": "CUSTOMGROUPKFCAU-1",
+					"modifiers": [{
+						"id": "CUSTOMGROUPKFCAU-1_30691-136005",
+						"quantity": 1,
+						"salesCategoryId": "CUSTOMGROUPKFCAU-1_30691-136005",
+						"posId": "136005",
+						"mdmId": "CUSTOMGROUPKFCAU-1_30691-136005",
+						"name": "Regular Chips",
+						"displayName": "Regular Chips",
+						"unitPrice": 0,
+						"modGrps": [{
+							"id": "89711",
+							"modifiers": [{
+								"id": "89711_30691-200031",
+								"quantity": 1,
+								"salesCategoryId": "89711_30691-200031",
+								"posId": "200031",
+								"mdmId": "89711_31900-200031",
+								"name": "Extra Salt",
+								"displayName": "Extra Salt",
+								"unitPrice": 0,
+								"modGrps": [
+									null
+								],
+						"isDefault": true
+				}]
+									}],
+						"isDefault": true
+				}]
+			}],
+			"isDefault": true
+		}
+		]
+	  },
+	  {
+		"id": "30691-3",
+        "modifiers": [{
+			"id": "30691-3_30691-3-1",
+			"quantity": 1,
+			"salesCategoryId": "30691-3_30691-3-1",
+			"posId": "3-1",
+			"mdmId": "30691-3_30691-3-1",
+			"name": "Pepsi Max - Edit to Upsize",
+			"displayName": "Pepsi Max - Edit to Upsize",
+			"unitPrice": 0,
+			"modGrps": [{
+				"id": "CUSTOMGROUPKFCAU-1",
+				"modifiers": [{
+					"id": "CUSTOMGROUPKFCAU-1_30691-141110",
+					"quantity": 1,
+					"salesCategoryId": "CUSTOMGROUPKFCAU-1_30691-141110",
+					"posId": "141110",
+					"mdmId": "CUSTOMGROUPKFCAU-1_30691-141110",
+					"name": "Large Pepsi Max",
+					"displayName": "Large Pepsi Max",
+					"unitPrice": 90,
+					"modGrps": [
+						null
+					],
+				"isDefault": true
+					}]
+				}],
+		"isDefault": true
+		}]
+	  }],
+	"customProperties": {
+	  "mealdealid": "1010",
+	  "mealdealdetailid": "QUICK_COMBO"
+	}
+}],
   "taxLines": [
   ],
   "additionalChargeLines": [
@@ -342,8 +222,8 @@
   "subTotal": 0,
   "taxTotal": 0,
   "additionalChargeTotal": 0,
-  "discountTotal": 0,
-  "total": 0,
+  "discountTotal": 200,
+  "total": 905,
   "deliveryAddress": {
     "name": "Samrat",
     "city": "Frenchs Forest",
