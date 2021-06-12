@@ -16,19 +16,12 @@
     }
   },
   "customer": {
-    "id": "581af32f-7568-4c8a-a256-3b6ca762a9e7",
+    "id": "",
     "firstName": "Samrat",
     "lastName": "Sarkar",
     "email": "samrat.sarkar4@cognizant.com",
     "phoneNumber": "9900990099",
     "couponCodes": [
-            {
-                "$id": "12",
-                "ItemSelections": [],
-                "CompId": 6973,
-                "Rate": 0.2,
-                "Amount": 1.79
-            }
         ]
   },
   "service": "delivery",
@@ -213,6 +206,10 @@
   "additionalChargeLines": [
   ],
   "discountLines": [
+   {
+   "CouponCode" : "FREE50",
+   "PromotionId" : "6973"
+   }
   ],
   "requestedDateTime": {
     "isForNow": true,
